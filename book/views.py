@@ -8,6 +8,10 @@ class BookListView(ListView):
     model = Book
     template_name = 'home.html'
 
+class GeneriListView(ListView):
+    model = Book
+    template_name = 'generi.html'
+
 
 class AzioneListView(ListView):
     model = Book
