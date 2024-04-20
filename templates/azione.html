@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Azione</h2>
+{% for libro in libri_Azione %}
+<p>{{ libro.title }}
+    {{ libro.body }}
+</p>
+{% endfor %}
+{% endblock content %}

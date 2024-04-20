@@ -9,6 +9,7 @@ class Autore(models.Model):
         return self.nome
 
 class Book(models.Model):
+    genere = models.CharField(max_length=100, null=True)
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Autore,
                                on_delete=models.CASCADE,
