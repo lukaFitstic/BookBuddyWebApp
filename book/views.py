@@ -8,6 +8,10 @@ class BookListView(ListView):
     model = Book
     template_name = 'home.html'
 
+class GeneriListView(ListView):
+    model = Book
+    template_name = 'generi.html'
+
 
 class AzioneListView(ListView):
     model = Book
@@ -27,7 +31,7 @@ class GialloListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         libri_Giallo = Book.objects.filter(genere="Giallo")
-        context['libri_Azione'] = libri_Giallo
+        context['libri_Giallo'] = libri_Giallo
         return context
 
 
@@ -38,7 +42,7 @@ class CommediaListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         libri_Commedia = Book.objects.filter(genere="Commedia")
-        context['libri_Azione'] = libri_Commedia
+        context['libri_Commedia'] = libri_Commedia
         return context
 
 
@@ -49,7 +53,7 @@ class CucinaListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         libri_Cucina = Book.objects.filter(genere="Cucina")
-        context['libri_Azione'] = libri_Cucina
+        context['libri_Cucina'] = libri_Cucina
         return context
 
 
@@ -60,7 +64,7 @@ class ReligiosoListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         libri_Religioso = Book.objects.filter(genere="Religioso")
-        context['libri_Azione'] = libri_Religioso
+        context['libri_Religioso'] = libri_Religioso
         return context
 
 
