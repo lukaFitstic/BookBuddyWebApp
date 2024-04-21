@@ -5,11 +5,10 @@
 {% endblock %}
 {% block content %}
 {% for libro in book_list %}
-<div class="libreria">
     <div class="libri">
-        <p class="libro_title">{{ libro.title }}</p>
+        <p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
         <p class="body"> {{ libro.body }}</p>
     </div>
-</div>
 {% endfor %}
+
 {% endblock content %}

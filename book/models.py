@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 class Autore(models.Model):
@@ -7,6 +9,7 @@ class Autore(models.Model):
     eta = models.IntegerField()
     def __str__(self):
         return self.nome
+
 
 class Book(models.Model):
     genere = models.CharField(max_length=100, null=True)
@@ -18,5 +21,11 @@ class Book(models.Model):
     year = models.IntegerField()
     pages = models.IntegerField()
     body = models.TextField()
+    slug = models.SlugField(default="")
+
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('dettagli', kwargs={"slug": self.slug})
+

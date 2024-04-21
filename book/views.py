@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Book, Autore
 
 
@@ -68,3 +68,6 @@ class ReligiosoListView(ListView):
         return context
 
 
+class BookDetailView(DetailView):
+    model = Book
+    template_name = 'dettagli.html'

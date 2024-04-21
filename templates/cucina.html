@@ -6,8 +6,6 @@
 {% block content %}
 <h2>Cucina</h2>
 {% for libro in libri_Cucina %}
-<p>{{ libro.title }}
-    {{ libro.body }}
-</p>
+<p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
 {% endfor %}
 {% endblock content %}

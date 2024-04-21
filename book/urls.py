@@ -9,5 +9,6 @@ urlpatterns = [
     path('giallo/', GialloListView.as_view(), name='giallo'),
     path('commedia/', CommediaListView.as_view(), name='commedia'),
     path('cucina/', CucinaListView.as_view(), name='cucina'),
-    path('religioso/', ReligiosoListView.as_view(), name='religioso')
+    path('religioso/', ReligiosoListView.as_view(), name='religioso'),
+    path('book_detail/<slug:slug>/', BookDetailView.as_view(), name='dettagli')
 ]

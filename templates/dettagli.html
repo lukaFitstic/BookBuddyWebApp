@@ -4,8 +4,7 @@
     <link rel="stylesheet" href="{% static 'css/commedia.css' %}">
 {% endblock %}
 {% block content %}
-<h2>Commedia</h2>
-{% for libro in libri_Commedia %}
-<p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
-{% endfor %}
+<h1>{{ object.title }}</h1>
+<p>{{ object.body }}</p>
+<p>Genere: {{ object.genere }}, pagine: {{ object.pages }}, anno: {{ object.year }}</p>
 {% endblock content %}
