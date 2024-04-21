@@ -1,0 +1,20 @@
+h2{
+    color: #006b1b;
+}
+div{
+  background-color: darkorange; /* Navbar background color */
+  padding: 10px; /* Padding around navbar */
+  border-radius: 5px; /* Rounded corners */
+  list-style-type: none; /* Remove default bullet points */
+}
+div a{
+    text-decoration: none; /* Remove underline from links */
+  color: #fff; /* Text color */
+  padding: 10px 15px; /* Padding around links */
+  border-radius: 3px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+div a:hover {
+    background-color: #2980b9; /* Darken the background color on hover */
+    color: #000; /* Change text color on hover */
+}

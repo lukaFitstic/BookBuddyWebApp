@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/religioso.css' %}">
+{% endblock %}
 {% block content %}
 <h2>Religione</h2>
 {% for libro in libri_Religioso %}

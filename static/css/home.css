@@ -1,0 +1,27 @@
+div.libreria {
+    display: grid;
+    grid-template-columns: repeat(3, 12px);
+    grid-template-rows: repeat(3, auto);
+}
+div.libri{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+p.libro_title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+p.body{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}

@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <title>Base</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}
+{% endblock %}
 </head>
 <body>
-<header>
-    <h1><a href="{% url 'home' %}">BookBuddy</a></h1>
-</header>
-
 <nav>
+    <header>
+        <h1><a href="{% url 'home' %}">Book<span>Buddy</span></a></h1>
+    </header>
     <a href="{% url 'generi' %}">Generi</a>
     <a href="#">Autori</a>
 </nav>
-{% block content %}
+<div>
+    {% block content %}
 
 {% endblock content %}
+</div>
+
 </body>
 </html>

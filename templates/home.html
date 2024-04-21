@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 {% block content %}
 {% for libro in book_list %}
-<p>{{ libro.title }}</p>
-<p>{{ libro.body }}</p>
+<div class="libreria">
+    <div class="libri">
+        <p class="libro_title">{{ libro.title }}</p>
+        <p class="body"> {{ libro.body }}</p>
+    </div>
+</div>
 {% endfor %}
 {% endblock content %}
