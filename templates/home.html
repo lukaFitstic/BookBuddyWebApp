@@ -4,8 +4,12 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 {% block content %}
+     <a href="{% url 'logout' %}"><label for="check">Logout</label></a>
 {% for libro in book_list %}
+
+
 <div class="libreria">
+
     <div class="libri">
         <p class="libro_title">{{ libro.title }}</p>
         <p class="body"> {{ libro.body }}</p>
