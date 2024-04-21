@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Book, Autore
 
 
@@ -7,6 +7,11 @@ from .models import Book, Autore
 class BookListView(ListView):
     model = Book
     template_name = 'home.html'
+
+class BookCreateView(CreateView):
+    model = Book
+    template_name = 'newbook.html'
+    fields = ['genere', 'title', 'author', 'year', 'pages', 'body']
 
 class GeneriListView(ListView):
     model = Book

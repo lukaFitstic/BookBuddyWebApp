@@ -15,7 +15,11 @@
     </header>
     <a href="{% url 'generi' %}">Generi</a>
     <a href="#">Autori</a>
+    <div class="add">
+        <a href="{% url 'newbook' %}">+ NewBook</a>
+    </div>
 </nav>
+
 <div>
     {% block content %}
 
