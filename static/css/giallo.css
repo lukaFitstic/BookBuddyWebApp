@@ -1,3 +1,6 @@
 h2{
     color: yellow;
 }
+p.libro_title a{
+    text-decoration: none;
+}
