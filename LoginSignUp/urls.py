@@ -1,8 +1,10 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
-
+from book import urls as book_urls
 urlpatterns = [
     path('signup/',views.signup, name='signup'),
-    path('login/',views.login, name='login'),
-    path('logout/',views.login, name='logout'),
+   path('accounts/login/',views.login, name='login'),
+    path('accounts/',include("django.contrib.auth.urls")),
+   # path('accounts/login/',views.login, name='logout'),
+
 ]

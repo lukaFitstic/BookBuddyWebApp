@@ -1,10 +1,10 @@
-from django.shortcuts import redirect
 from django.views.generic import ListView
 from .models import Book, Autore
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-class BookListView(ListView):
+
+class BookListView(LoginRequiredMixin, ListView):
         model = Book
         template_name = 'home.html'
 

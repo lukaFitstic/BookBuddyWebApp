@@ -53,6 +53,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "bookbuddyproject.urls"
 
+LOGOUT_REDIRECT_URL = "/accounts/login/"
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -70,6 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "bookbuddyproject.wsgi.application"
+
 
 
 # Database

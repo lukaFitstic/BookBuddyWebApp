@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import auth
 # Create your views here.
 def signup(request):
     if request.method == 'POST':
@@ -16,11 +17,11 @@ def signup(request):
 
 def login(request):
     if request.method=="POST":
-        email = request.POST.get('email')
+        username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, username=email, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
-            #login(request, user)
+            auth.login(request, user)
             return redirect("/")
         else:
             return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
@@ -29,5 +30,6 @@ def login(request):
 
 @login_required
 def logout(request):
-    return render(request, 'login.html')
+    logout(request)
+    return redirect('/accounts/login')
 

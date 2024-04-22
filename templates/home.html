@@ -1,15 +1,17 @@
 {% extends "base.html" %}
+{% if User.is_authenticated %}
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 {% block content %}
-     <a href="{% url 'logout' %}"><label for="check">Logout</label></a>
+    {{ user.username }}
+     <form action="{% url 'logout' %}" method="post">
+         {% csrf_token %}
+            <button type="submit">Logout</button>
+     </form>
 {% for libro in book_list %}
-
-
 <div class="libreria">
-
     <div class="libri">
         <p class="libro_title">{{ libro.title }}</p>
         <p class="body"> {{ libro.body }}</p>
@@ -18,3 +20,6 @@
 {% endfor %}
 
 {% endblock content %}
+{% else %}
+<h1>ciao</h1>
+{% endif %}
