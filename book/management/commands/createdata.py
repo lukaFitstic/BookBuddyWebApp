@@ -1,9 +1,9 @@
-import os
-import sys
-from django.core.management.base import BaseCommand
+from django.core.management.base import BaseCommand, CommandError
+from django.core.management import call_command
 from faker import Faker
 import faker.providers
 import faker.providers.lorem
+from book.models import Book
 
 
 GENERI = [
@@ -21,10 +21,7 @@ class Provider(faker.providers.BaseProvider):
 
 
 class Command(BaseCommand):
-    help = "Command information"
+    help = 'Custom command to run manage.py shell, import a specific model, and create some objects'
 
-    def handle(self, *args, **kwargs):
-        fake = Faker('it_IT')
-        fake.add_provider(Provider)
-
-        print("Ciao")
+    def handle(self, *args, **options):
+        print("Pippo")
