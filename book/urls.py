@@ -10,5 +10,6 @@ urlpatterns = [
     path('commedia/', CommediaListView.as_view(), name='commedia'),
     path('cucina/', CucinaListView.as_view(), name='cucina'),
     path('religioso/', ReligiosoListView.as_view(), name='religioso'),
-    path('book_detail/<slug:slug>/', BookDetailView.as_view(), name='dettagli')
+    path('book_detail/<slug:slug>/', BookDetailView.as_view(), name='dettagli'),
+    path('newbook/', BookCreateView.as_view(), name='newbook'),
 ]

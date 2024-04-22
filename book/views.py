@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Book, Autore
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -72,3 +72,7 @@ class ReligiosoListView(LoginRequiredMixin, ListView):
 class BookDetailView(LoginRequiredMixin, DetailView):
     model = Book
     template_name = 'dettagli.html'
+class BookCreateView(LoginRequiredMixin, CreateView):
+    model = Book
+    template_name = 'newbook.html'
+    fields = ['genere','title', 'author', 'year', 'pages', 'body']
