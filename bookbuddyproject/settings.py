@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "book",
+    "LoginSignUp.apps.LoginsignupConfig",
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "bookbuddyproject.urls"
+
+LOGOUT_REDIRECT_URL = "/accounts/login/"
 
 TEMPLATES = [
     {

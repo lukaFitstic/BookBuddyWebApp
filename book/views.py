@@ -1,19 +1,20 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Book, Autore
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
-class BookListView(ListView):
+class BookListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'home.html'
 
-class GeneriListView(ListView):
+class GeneriListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'generi.html'
 
 
-class AzioneListView(ListView):
+class AzioneListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'azione.html'
 
@@ -24,7 +25,7 @@ class AzioneListView(ListView):
         return context
 
 
-class GialloListView(ListView):
+class GialloListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'giallo.html'
 
@@ -35,7 +36,7 @@ class GialloListView(ListView):
         return context
 
 
-class CommediaListView(ListView):
+class CommediaListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'commedia.html'
 
@@ -46,7 +47,7 @@ class CommediaListView(ListView):
         return context
 
 
-class CucinaListView(ListView):
+class CucinaListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'cucina.html'
 
@@ -57,7 +58,7 @@ class CucinaListView(ListView):
         return context
 
 
-class ReligiosoListView(ListView):
+class ReligiosoListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'religioso.html'
 
@@ -68,6 +69,6 @@ class ReligiosoListView(ListView):
         return context
 
 
-class BookDetailView(DetailView):
+class BookDetailView(LoginRequiredMixin, DetailView):
     model = Book
     template_name = 'dettagli.html'

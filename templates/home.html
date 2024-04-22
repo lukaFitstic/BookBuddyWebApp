@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 {% block content %}
+{{ user.username }}
+     <form action="{% url 'logout' %}" method="post">
+         {% csrf_token %}
+            <button type="submit">Logout</button>
+     </form>
 {% for libro in book_list %}
     <div class="libri">
         <p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
