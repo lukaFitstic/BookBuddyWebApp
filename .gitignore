@@ -1,0 +1,20 @@
+# Directory virtuale di Python (creata dal venv o virtualenv)
+venv/
+env/
+
+# File di configurazione specifici per il tuo ambiente locale
+.env
+
+# File generati dagli IDE
+.vscode/
+.idea/
+
+# File di log
+*.log
+
+# Cache e file temporanei
+__pycache__/
+*.pyc
+*.swp
+
+db.sqlite3
