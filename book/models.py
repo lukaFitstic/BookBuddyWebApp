@@ -18,9 +18,9 @@ class Book(models.Model):
                                on_delete=models.CASCADE,
                                default=None,
                                null=True)
-    year = models.IntegerField()
-    pages = models.IntegerField()
-    body = models.TextField()
+    year = models.IntegerField(default="2024")
+    pages = models.IntegerField(default="0")
+    body = models.TextField(default="No body available")
     slug = models.SlugField(default="")
 
     def __str__(self):
