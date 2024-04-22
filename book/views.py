@@ -1,12 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views.generic import ListView
 from .models import Book, Autore
 
 
 # Create your views here.
 class BookListView(ListView):
-    model = Book
-    template_name = 'home.html'
+        model = Book
+        template_name = 'home.html'
 
 class GeneriListView(ListView):
     model = Book

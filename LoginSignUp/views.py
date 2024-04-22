@@ -12,7 +12,6 @@ def signup(request):
         else:
             error_message = form.errors.as_text()
             return render(request, 'signup.html', {'error': error_message})
-
     return render(request, 'signup.html')
 
 def login(request):
