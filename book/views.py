@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Book, Autore
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -76,3 +77,11 @@ class BookCreateView(LoginRequiredMixin, CreateView):
     model = Book
     template_name = 'newbook.html'
     fields = ['genere','title', 'author', 'year', 'pages', 'body', 'slug']
+class BookUpdateView(LoginRequiredMixin, UpdateView):
+    model = Book
+    template_name = 'editbook.html'
+    fields = ['genere','body']
+class BookDeleteView(LoginRequiredMixin, DeleteView):
+    model = Book
+    template_name = 'deletebook.html'
+    success_url = reverse_lazy("home")
