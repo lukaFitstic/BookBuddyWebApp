@@ -75,4 +75,4 @@ class BookDetailView(LoginRequiredMixin, DetailView):
 class BookCreateView(LoginRequiredMixin, CreateView):
     model = Book
     template_name = 'newbook.html'
-    fields = ['genere','title', 'author', 'year', 'pages', 'body']
+    fields = ['genere','title', 'author', 'year', 'pages', 'body', 'slug']
