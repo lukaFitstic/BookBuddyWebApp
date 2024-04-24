@@ -13,7 +13,14 @@ class BookListView(LoginRequiredMixin, ListView):
 class GeneriListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'generi.html'
-
+class AutoriListView(LoginRequiredMixin, ListView):
+    model = Autore
+    template_name = 'autori.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        autori = Autore.objects.all()
+        context['autori'] = autori
+        return context
 
 class AzioneListView(LoginRequiredMixin, ListView):
     model = Book
