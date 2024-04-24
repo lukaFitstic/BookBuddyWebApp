@@ -7,4 +7,8 @@
 <h1>{{ object.title }}</h1>
 <p>{{ object.body }}</p>
 <p>Genere: {{ object.genere }}, pagine: {{ object.pages }}, anno: {{ object.year }}</p>
+<div>
+    <a href="{% url 'editbook' object.pk %}">Edit Book</a>
+    <a href="{% url 'deletebook' object.pk %}">Delete Book</a>
+</div>
 {% endblock content %}
