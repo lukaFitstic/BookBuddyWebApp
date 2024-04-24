@@ -12,7 +12,13 @@ class Autore(models.Model):
 
 
 class Book(models.Model):
-    genere = models.CharField(max_length=100, null=True)
+    GENERE_CHOICES = (
+        ('Giallo', 'Giallo'),
+        ('Cucina', 'Cucina'),
+        ('Religioso', 'Religioso'),
+        ('Azione', 'Azione'),
+        ('Commedia', 'Commedia'))
+    genere = models.CharField(max_length=100, choices=GENERE_CHOICES)
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Autore,
                                on_delete=models.CASCADE,
@@ -28,4 +34,5 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         return reverse('dettagli', kwargs={"slug": self.slug})
+
 
