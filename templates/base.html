@@ -15,7 +15,9 @@
     </header>
     <a href="{% url 'generi' %}">Generi</a>
     <a href="#">Autori</a>
+    {% if user.is_superuser %}
     <a href="{% url 'newbook' %}">+ NEW BOOK</a>
+    {% endif %}
 </nav>
 <div>
     {% block content %}
