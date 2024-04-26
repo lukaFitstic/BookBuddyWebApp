@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>{{ libri.nome }} ha scritto</h1>
-    {% for libri in LibriperAutori %}
+    {% for libri in raccolta %}
         <p>
         {{ libri.title }}|
         {{ libri.pages }}

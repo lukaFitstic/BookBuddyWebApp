@@ -104,9 +104,9 @@ class LibriperAutoriListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = "raccolta.html"
     def get_context_data(self, author_id=None, **kwargs):
-        context=super().get_context_data(**kwargs)
-        LibriperAutori=Book.objects.filter(author_id=author_id)
-        context['LibriperAutori'] = LibriperAutori
+        context = super().get_context_data(**kwargs)
+        raccolta = Book.objects.filter(author_id=author_id)
+        context['raccolta'] = raccolta
         return context
 
 
