@@ -5,12 +5,14 @@
     <ul>
         {% for autore in autori %}
             <p class="autore">
-                Nome:
-                {{ autore.nome }}
-                | Cogome:
-                {{ autore.cognome }}
-                | Età:
-                {{ autore.eta }}
+                <a href="{% url 'raccolta' autore.pk %}">
+                    Nome:
+                    {{ autore.nome }}
+                    | Cogome:
+                    {{ autore.cognome }}
+                    | Età:
+                    {{ autore.eta }}
+                </a>
             </p>
         {% endfor %}
     </ul>
