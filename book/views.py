@@ -107,20 +107,17 @@ class AddBookView(LoginRequiredMixin, View):
         return redirect(book.get_absolute_url())
 
 
-class ListListView(LoginRequiredMixin, ListView):
+class ToreadlistListView(LoginRequiredMixin, ListView):
     model = ToRead
     template_name = 'toreadlist.html'
     context_object_name = 'user'
-
-    def get_queryset(self):
-        user = self.request.user
-        user__id = user.id
-        return ToRead.objects.filter(user__id=user__id)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
         user__id = user.id
-        book_list = ToRead.objects.filter(user__id=user__id)
+        user_list = ToRead.objects.filter(user_id=user__id)
+        id_list = [id.book_id for id in user_list]
+        book_list = Book.objects.filter(id__in=id_list)
         context['list'] = book_list
         return context
