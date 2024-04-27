@@ -1,17 +1,21 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
 
 # Create your models here.
 class Autore(models.Model):
+
     nome = models.CharField(max_length=100)
     cognome = models.CharField(max_length=100)
     eta = models.IntegerField()
+
     def __str__(self):
         return self.nome
 
 
 class Book(models.Model):
+
     genere = models.CharField(max_length=100, null=True)
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Autore,
@@ -29,3 +33,8 @@ class Book(models.Model):
     def get_absolute_url(self):
         return reverse('dettagli', kwargs={"slug": self.slug})
 
+
+class ToRead(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
+    read = models.BooleanField(default=False)

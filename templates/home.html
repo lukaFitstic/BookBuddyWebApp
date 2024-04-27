@@ -9,6 +9,7 @@
          {% csrf_token %}
             <button type="submit">Logout</button>
      </form>
+
 {% for libro in book_list %}
     <div class="libri">
         <p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>

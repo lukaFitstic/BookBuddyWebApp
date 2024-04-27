@@ -14,11 +14,10 @@ GENERI = [
     "Religioso"
 ]
 
-IDAUTORI = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-    21, 22, 23
-]
+IDAUTORI = []
+
+for autore in Autore.objects.all():
+    IDAUTORI.append(autore.id)
 
 
 class Provider(faker.providers.BaseProvider):
@@ -32,11 +31,15 @@ class Provider(faker.providers.BaseProvider):
 class Command(BaseCommand):
     help = 'Custom command to run manage.py shell, import a specific model, and create some objects'
 
-    def handle(self, *args, **options):
+    def add_arguments(self, parser):
+        parser.add_argument('quantity', type=int, help='Inserisci il numero di libri da generare')
+
+    def handle(self, *args, **kwargs):
         fake = Faker(["it_IT"])
         fake.add_provider(Provider)
+        quantity = kwargs['quantity']
 
-        for _ in range(100):
+        for _ in range(quantity):
             faketitle = fake.sentence(nb_words=3, variable_nb_words=False)
             fakeautorid = fake.book_idautor()
             Book.objects.create(title=faketitle.replace(".", ""),
