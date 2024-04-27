@@ -4,9 +4,11 @@
     {% for libri in book %}
         <h3> {{ libri.author }} ha scritto</h3>
         <p>
+            <a href="{{ libri.get_absolute_url }}">
         Genere: {{ libri.genere }} |
         Title: {{ libri.title }} |
         Pages: {{ libri.pages }}
+            </a>
         </p>
     {% endfor %}
 {% endblock content %}
