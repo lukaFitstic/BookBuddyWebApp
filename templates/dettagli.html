@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/commedia.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
-<h1>{{ object.title }}</h1>
-<p>{{ object.body }}</p>
-<p>Genere: {{ object.genere }}, pagine: {{ object.pages }}, anno: {{ object.year }}</p>
+
+<h1 class="libro_title">{{ object.title }}</h1>
+<div class="left">
+<p class="descrizione">{{ object.body }}</p>
+<p class="text">Genere: {{ object.genere }}, pagine: {{ object.pages }}, anno: {{ object.year }}</p>
+</div>
 {% endblock content %}

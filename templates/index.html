@@ -11,23 +11,21 @@
     <nav>
       <div class="logo no-invert">
         <img src="\static\files\logo.png" alt="logo" />
+
         <h1>BookBuddy</h1>
       </div>
       <ul>
         <li>
-          <a href="base.html">Home</a>
-        </li>
-        <li>
-          <a href="#">Contact Us</a>
+          <a href="">Home</a>
         </li>
           <li>
-          <a href="#">About Us</a>
+          <a href="#contact">Contact Us</a>
         </li>
           <li>
-          <a href="signup.html">Register</a>
+          <a href="{% url 'signup' %}">Register</a>
         </li>
         <li>
-          <a href="login.html">Login</a>
+          <a href="{% url 'login' %}">Login</a>
         </li>
 
       </ul>
@@ -39,17 +37,17 @@
         <span class="line"></span>
       </div>
     </nav>
+
 <div class="logo1">
     <h1>BookBuddy</h1>
 </div>
 <section id="box">
-    la libreria digitale del metaverso!
     <div class="btn-container">
 
-        <button class="btn btn-color-1" onclick="location.href='./login.html'">
+        <button class="btn btn-color-1" onclick="location.href='{% url 'login' %}'">
           Login
         </button>
-        <button class="btn btn-color-1" onclick="location.href='./signup.html'">
+        <button class="btn btn-color-1" onclick="location.href='{% url 'signup' %}'">
           Register
         </button>
       </div>
@@ -63,19 +61,16 @@ BookBuddy è la soluzione completa per gestire la tua libreria in modo efficient
     <div class="menubar">
       <ul>
         <li>
-          <a href="#index.html">Home</a>
+          <a href="index.html">Home</a>
         </li>
         <li>
-          <a href="#">About Us</a>
+          <a href="#contact">About Us</a>
         </li>
         <li>
-          <a href="#">Contact Us</a>
-        </li>
-        <li>
-          <a href="#">register</a>
+          <a href="signup.html">register</a>
         </li>
           <li>
-          <a href="#">Login</a>
+          <a href="base.html">Login</a>
         </li>
       </ul>
     </div>
@@ -85,17 +80,21 @@ BookBuddy è la soluzione completa per gestire la tua libreria in modo efficient
 
 <footer>
     <div class="footer-container">
+        <section  id="contact">
         <div class="footer-left">
-            <h3>Contattaci</h3>
-            <p>Email: info@example.com</p>
-            <p>Telefono: 0123456789</p>
-        </div>
+
+            <h3>Contatti</h3>
+<div class="email">
+            <p>Email: <a href="mailto:BookBuddy@gmail.com">BookBuddy@gmail.com</a></p>
+</div>
+            <p>Telefono: 322.836.3854</p>
+        </div></section>
         <div class="footer-right">
             <h3>Seguici</h3>
             <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
             </ul>
         </div>
     </div>

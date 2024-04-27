@@ -4,40 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Base</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     {% block extra_css %}
 {% endblock %}
 </head>
 <body>
-<nav>
+<nav class = "navbar-base">
     <header>
-        <h1><a href="{% url 'home' %}">Book<span>Buddy</span></a></h1>
+        <h1><a class = "btn btn-color-1  " href="{% url 'home' %}">Book<span>Buddy</span></a></h1>
     </header>
-    <a href="{% url 'generi' %}">Generi</a>
-    <a href="#">Autori</a>
-    <a href="{% url 'newbook' %}">+ NEW BOOK</a>
+<div class="textB">
+    <a class = "btn btn-color-1" href="{% url 'generi' %}">Generi</a>
+    <a class = "btn btn-color-1" href="#">Autori</a>
+    <a class = "btn btn-color-1" href="{% url 'newbook' %}">+ NEW BOOK</a>
 </nav>
+</div>
+<div class="container"></div>
 <div>
     {% block content %}
 
 {% endblock content %}
 </div>
-
-</body>
+<div class="container"></div>
 <footer>
     <div class="footer-container">
+        <section  id="contact">
         <div class="footer-left">
-            <h3>Contattaci</h3>
-            <p>Email: info@example.com</p>
-            <p>Telefono: 0123456789</p>
-        </div>
+
+            <h3>Contatti</h3>
+<div class="email">
+            <p>Email: <a href="mailto:BookBuddy@gmail.com">BookBuddy@gmail.com</a></p>
+</div>
+            <p>Telefono: 322.836.3854</p>
+        </div></section>
         <div class="footer-right">
             <h3>Seguici</h3>
             <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
             </ul>
         </div>
     </div>
@@ -45,4 +51,6 @@
         &copy; 2024 BookByddy. Tutti i diritti riservati.
     </div>
 </footer>
+</body>
+
 </html>

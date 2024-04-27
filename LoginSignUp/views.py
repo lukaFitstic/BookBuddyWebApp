@@ -4,6 +4,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 # Create your views here.
+
+def index(request):
+    return render(request, 'index.html')
+
+
 def signup(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -22,7 +27,7 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect("/")
+            return redirect("/home/")
         else:
             return render(request, 'login.html', {'error': "Invalid credentials. Please try again."})
 
@@ -32,4 +37,3 @@ def login(request):
 def logout(request):
     logout(request)
     return redirect('/accounts/login')
-

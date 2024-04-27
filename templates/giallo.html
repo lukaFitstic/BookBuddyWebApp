@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/giallo.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
-<h2>Gialli</h2>
+<h1>Giallo</h1>
+<div class="">
 {% for libro in libri_Giallo %}
+</div>
+<div>
 <p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
+</div>
 {% endfor %}
 {% endblock content %}

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-        <div class="container">
+
+<h1>Login</h1>
     <div class="login form">
-      <header>Login</header>
+
       <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
         <input type="text" placeholder="Enter your email" name="username">
@@ -19,9 +20,34 @@
       </form>
       <div class="signup">
         <span class="signup">Don't have an account?
-         <a href="{% url 'signup' %}"><label for="check">Signup</label></a>
+         <a class="btn " href="{% url 'signup' %}"><label for="check">Signup</label></a>
         </span>
       </div>
     </div>
-  </div>
+
 {% endblock %}
+
+<footer>
+    <div class="footer-container">
+        <section  id="contact">
+        <div class="footer-left">
+
+            <h3>Contatti</h3>
+<div class="email">
+            <p>Email: <a href="mailto:BookBuddy@gmail.com">BookBuddy@gmail.com</a></p>
+</div>
+            <p>Telefono: 322.836.3854</p>
+        </div></section>
+        <div class="footer-right">
+            <h3>Seguici</h3>
+            <ul>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2024 BookByddy. Tutti i diritti riservati.
+    </div>
+</footer>

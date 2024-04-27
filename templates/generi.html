@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/generi.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
 <h2>Generi</h2>
-<div>
-    <a href="{% url 'giallo' %}">Giallo</a>
+<div class="login">
+    <a class="" href="{% url 'giallo' %}">Giallo</a>
     <a href="{% url 'azione' %}">Azione</a>
     <a href="{% url 'cucina' %}">Cucina</a>
     <a href="{% url 'commedia' %}">Commedia</a>
     <a href="{% url 'religioso' %}">Religioso</a>
 </div>
+
+<div class="container"></div>
+
+
+
+
+
 {% endblock content %}
