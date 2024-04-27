@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
@@ -36,3 +37,7 @@ class Book(models.Model):
         return reverse('dettagli', kwargs={"slug": self.slug})
 
 
+class ToRead(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
+    read = models.BooleanField(default=False)

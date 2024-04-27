@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Book, Autore
+from .models import Book, Autore, ToRead
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
@@ -109,3 +110,26 @@ class LibriperAutoriListView(LoginRequiredMixin, ListView):
         return Book.objects.filter(author__id=author__id)
 
 
+class AddBookView(LoginRequiredMixin, View):
+    def post(self, request, book_id):
+        user = request.user
+        book = get_object_or_404(Book, pk=book_id)
+        ToRead.objects.create(user=user, book=book)
+
+        return redirect(book.get_absolute_url())
+
+
+class ToreadlistListView(LoginRequiredMixin, ListView):
+    model = ToRead
+    template_name = 'toreadlist.html'
+    context_object_name = 'user'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        user__id = user.id
+        user_list = ToRead.objects.filter(user_id=user__id)
+        id_list = [id.book_id for id in user_list]
+        book_list = Book.objects.filter(id__in=id_list)
+        context['list'] = book_list
+        return context
