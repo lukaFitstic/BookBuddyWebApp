@@ -1,0 +1,19 @@
+{%  extends "base.html" %}
+{% block content %}
+    <h1>Autori</h1>
+    <h3>Autori disponibili nella nostra libreria:</h3>
+    <ul>
+        {% for autore in autori %}
+            <p class="autore">
+                <a href="{% url 'raccolta' autore.pk %}">
+                    Nome:
+                    {{ autore.nome }}
+                    | Cogome:
+                    {{ autore.cognome }}
+                    | Età:
+                    {{ autore.eta }}
+                </a>
+            </p>
+        {% endfor %}
+    </ul>
+{% endblock content %}

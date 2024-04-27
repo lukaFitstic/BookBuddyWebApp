@@ -13,7 +13,14 @@ class BookListView(LoginRequiredMixin, ListView):
 class GeneriListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'generi.html'
-
+class AutoriListView(LoginRequiredMixin, ListView):
+    model = Autore
+    template_name = 'autori.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        autori = Autore.objects.all()
+        context['autori'] = autori
+        return context
 
 class AzioneListView(LoginRequiredMixin, ListView):
     model = Book
@@ -73,15 +80,32 @@ class ReligiosoListView(LoginRequiredMixin, ListView):
 class BookDetailView(LoginRequiredMixin, DetailView):
     model = Book
     template_name = 'dettagli.html'
+
+
 class BookCreateView(LoginRequiredMixin, CreateView):
     model = Book
     template_name = 'newbook.html'
     fields = ['genere','title', 'author', 'year', 'pages', 'body', 'slug']
+
+
 class BookUpdateView(LoginRequiredMixin, UpdateView):
     model = Book
     template_name = 'editbook.html'
     fields = ['genere','body']
+
+
 class BookDeleteView(LoginRequiredMixin, DeleteView):
     model = Book
     template_name = 'deletebook.html'
     success_url = reverse_lazy("home")
+
+
+class LibriperAutoriListView(LoginRequiredMixin, ListView):
+    model = Book
+    template_name = "raccolta.html"
+    context_object_name = 'book'
+    def get_queryset(self):
+        author__id = self.kwargs['author_id']
+        return Book.objects.filter(author__id=author__id)
+
+

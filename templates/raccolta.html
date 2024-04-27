@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for libri in book %}
+        <h3> {{ libri.author }} ha scritto</h3>
+        <p>
+        Genere: {{ libri.genere }} |
+        Title: {{ libri.title }} |
+        Pages: {{ libri.pages }}
+        </p>
+    {% endfor %}
+{% endblock content %}
