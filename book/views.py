@@ -103,10 +103,9 @@ class BookDeleteView(LoginRequiredMixin, DeleteView):
 class LibriperAutoriListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = "raccolta.html"
-    def get_context_data(self, author_id=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        raccolta = Book.objects.filter(author_id=author_id)
-        context['raccolta'] = raccolta
-        return context
+    context_object_name = 'book'
+    def get_queryset(self):
+        author__id = self.kwargs['author_id']
+        return Book.objects.filter(author__id=author__id)
 
 
