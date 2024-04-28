@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text {
+  text-indent: 2em; /* Modificato in em per adattarsi meglio alle dimensioni dello schermo */
+}
+
+.title {
+  text-align: center;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+  text-align: center;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 5px;
+}
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: 0.1rem solid rgb(81, 0, 137); /* Modificato per adattarsi meglio */
+  border-radius: 5px;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: #f1efef;
+}
+
+.btn-color-1:hover {
+  background: rgb(5, 5, 5);
+}
+
+.container {
+  padding-top: 10%; /* Modificato in percentuale per adattarsi meglio alle dimensioni dello schermo */
+}
+
+.left {
+  text-align: left;
+}
+
+nav {
+  position: fixed;
+  padding: 5px 5%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 100;
+  background-color: white;
+}
+
+.logo1 {
+  margin-top: 2rem; /* Modificato in rem per adattarsi meglio */
+  text-align: center;
+  font-size: 2rem;
+}
+
+nav .logo img {
+  height: 3rem; /* Modificato in rem per adattarsi meglio */
+  width: auto;
+  margin-right: 1rem; /* Modificato in rem per adattarsi meglio */
+}
+
+nav .logo h1 {
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.menubar {
+  position: absolute;
+  top: 0;
+  left: -100%; /* Modificato per nascondere il menubar quando non è attivo */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%; /* Modificato per adattarsi meglio */
+  height: 100vh;
+  padding: 20% 0;
+  background: rgba(255, 255, 255);
+  transition: all 0.5s ease-in;
+  z-index: 2;
+}
+
+.active {
+  left: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+
+.menubar ul li {
+  margin-bottom: 2rem; /* Modificato in rem per adattarsi meglio */
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menubar ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Media Query per dispositivi fino a 790px */
+
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menubar {
+    width: 100%; /* Modificato per riempire completamente lo schermo */
+  }
+}
