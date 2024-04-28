@@ -11,13 +11,14 @@
 <div>
     <a href="{% url 'editbook' object.pk %}">Edit Book</a>
     <a href="{% url 'deletebook' object.pk %}">Delete Book</a>
-    <button id="aggiungi-libro-btn">Aggiungi alla lista di lettura</button>
 </div>
+{% endif %}
+    <button id="aggiungi-libro-btn">Aggiungi alla lista di lettura</button>
 <form id="aggiungi-libro-form" action="{% url 'addbook' book.id %}" method="post">{% csrf_token %}</form>
 <script>
     document.getElementById('aggiungi-libro-btn').addEventListener('click', function() {
       document.getElementById('aggiungi-libro-form').submit();
     });
 </script>
-{% endif %}
+
 {% endblock content %}
