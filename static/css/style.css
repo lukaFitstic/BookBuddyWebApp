@@ -5,30 +5,27 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.text {
-  text-indent: 2em; /* Modificato in em per adattarsi meglio alle dimensioni dello schermo */
+text{
+  text-indent: 20em;
 }
+.title{
+  text-align:center;
 
-.title {
-  text-align: center;
 }
-
 body {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
-}
 
+}
 #box {
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 30vh;
   text-align: center;
 }
-
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
@@ -41,18 +38,15 @@ body {
   display: flex;
   gap: 1rem;
 }
-
 .btn-color-1,
 .btn-color-2 {
-  border: 0.1rem solid rgb(81, 0, 137); /* Modificato per adattarsi meglio */
+  border: rgb(81, 0, 137) 0.1rem solid;
   border-radius: 5px;
 }
-
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
 }
-
 .btn-color-1,
 .btn-color-2:hover {
   background: rgb(53, 53, 53);
@@ -62,17 +56,18 @@ body {
 .btn-color-1:hover {
   background: rgb(5, 5, 5);
 }
-
 .container {
-  padding-top: 10%; /* Modificato in percentuale per adattarsi meglio alle dimensioni dello schermo */
+  padding-top:70px; /* Altezza della navbar */
 }
-
-.left {
-  text-align: left;
+#container {
+  padding-top:70px; /* Altezza della navbar */
+}
+.left{
+    text-align: left;
 }
 
 nav {
-  position: fixed;
+  position:  fixed;
   padding: 5px 5%;
   width: 100%;
   top: 0;
@@ -86,18 +81,36 @@ nav {
   background-color: white;
 }
 
-.logo1 {
-  margin-top: 2rem; /* Modificato in rem per adattarsi meglio */
-  text-align: center;
+nav .navbar-base{
+  position:  fixed;
+  padding: 5px 5%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 100;
+  background-color: white;
+
+}
+
+.logo1{
+  margin-top: 9rem;
+text-align: center;
   font-size: 2rem;
 }
-
-nav .logo img {
-  height: 3rem; /* Modificato in rem per adattarsi meglio */
-  width: auto;
-  margin-right: 1rem; /* Modificato in rem per adattarsi meglio */
+nav .logo {
+  display: flex;
+  align-items: center;
 }
-
+nav .logo img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
 nav .logo h1 {
   font-size: 1.1rem;
   background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
@@ -110,11 +123,9 @@ nav ul {
   list-style: none;
   display: flex;
 }
-
 nav ul li {
   margin-left: 1.5rem;
 }
-
 nav ul li a {
   text-decoration: none;
   color: #000;
@@ -133,21 +144,51 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: #1f1f1f;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
 .menubar {
   position: absolute;
   top: 0;
-  left: -100%; /* Modificato per nascondere il menubar quando non è attivo */
+  left: -60%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100%; /* Modificato per adattarsi meglio */
+  width: 60%;
   height: 100vh;
   padding: 20% 0;
   background: rgba(255, 255, 255);
   transition: all 0.5s ease-in;
   z-index: 2;
 }
-
 .active {
   left: 0;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -157,9 +198,8 @@ nav ul li a:hover {
   padding: 0;
   list-style: none;
 }
-
 .menubar ul li {
-  margin-bottom: 2rem; /* Modificato in rem per adattarsi meglio */
+  margin-bottom: 32px;
 }
 
 .menubar ul li a {
@@ -174,19 +214,223 @@ nav ul li a:hover {
 .menubar ul li a:hover {
   background-color: #f5f5f5;
 }
-
-/* Media Query per dispositivi fino a 790px */
-
 @media screen and (max-width: 790px) {
   .hamburger {
     display: block;
   }
-
   nav ul {
     display: none;
   }
-
-  .menubar {
-    width: 100%; /* Modificato per riempire completamente lo schermo */
-  }
 }
+
+
+
+footer {
+    background-color: #6500ff;
+
+    vertical-align: bottom;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width:100%;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+
+}
+
+
+.footer-container {
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+.footer-left, .footer-right {
+    flex-basis: 20%;
+}
+
+  .footer-left h3, .footer-right h3 {
+    margin-bottom: 10px;
+  }
+
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-right ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  .footer-right ul li:last-child {
+    margin-right: 0;
+  }
+
+  .footer-right ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .copyright {
+    margin-top: 20px;
+  }
+
+  .email a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .email a:hover {
+    color: lightblue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .textB {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+
+  }
+
+  div.libreria {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+  }
+
+  div .wrapper {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  .libri {
+    /*display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    flex-direction: column;
+    justify-items:stretch;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;*/
+
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+
+  .libro_title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .descrizione {
+    font-size: 0.9em;
+    color: #333;
+  }
+
+  p.body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+  }
+
+  div {
+    background-color: transparent; /* Navbar background color */
+    padding: 10px; /* Padding around navbar */
+    border-radius: 5px; /* Rounded corners */
+    list-style-type: none; /* Remove default bullet points */
+  }
+
+  div a {
+    text-decoration: none; /* Remove underline from links */
+    color: #070000; /* Text color */
+    padding: 10px 15px; /* Padding around links */
+    border-radius: 3px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  div a:hover {
+    background-color: #6500ff; /* Darken the background color on hover */
+    color: #ffffff; /* Change text color on hover */
+  }
+
+  .login {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+  }
+
+  .login .button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #6500ff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  .signup {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #6500ff;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+
+  }
+
+  h1 {
+    text-align: center;
+    color: #6500ff;
+  }
+
+  form input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #6500ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  form input[type="text"],
+  form input[type="password"] {
+    width: 100%;
+    margin: 5px;
+
+  }

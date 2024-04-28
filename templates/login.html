@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-{% block content %}
+{% block content %} 
         <div class="container">
+            <h1>Login</h1>
     <div class="login form">
-      <header>Login</header>
+      
       <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
         <input type="text" placeholder="Enter your username" name="username">

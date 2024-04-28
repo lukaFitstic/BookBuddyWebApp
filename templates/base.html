@@ -1,30 +1,60 @@
+        
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Base</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     {% block extra_css %}
 {% endblock %}
 </head>
 <body>
-<nav>
-    <header>
-        <h1><a href="{% url 'home' %}">Book<span>Buddy</span></a></h1>
+<nav class = "navbar-base">
+    <header>    
+        <h1><a class = "btn btn-color-1  " href="{% url 'home' %}">Book<span>Buddy</span></a></h1>
     </header>
-    <a href="{% url 'generi' %}">Generi</a>
-    <a href="{% url 'autori' %}">Autori</a>
-    <a href="{% url 'list' %}">Lista</a>
+<div class="textB">
+    <a class = "btn btn-color-1" href="{% url 'generi' %}">Generi</a>
+    <a class = "btn btn-color-1" href="{% url 'autori' %}">Autori</a>
+    <a class = "btn btn-color-1" href="{% url 'list' %}">Lista</a>
     {% if user.is_superuser %}
-    <a href="{% url 'newbook' %}">+ NEW BOOK</a>
+    <a class = "btn btn-color-1" href="{% url 'newbook' %}">+ NEW BOOK</a>
     {% endif %}
 </nav>
+</div>
+<div class="container"></div>
 <div>
     {% block content %}
 
 {% endblock content %}
 </div>
+<div class="container"></div>
+<footer>
+    <div class="footer-container">
+        <section  id="contact">
+        <div class="footer-left">
 
+            <h3>Contatti</h3>
+<div class="email">
+            <p>Email: <a href="mailto:BookBuddy@gmail.com">BookBuddy@gmail.com</a></p>
+</div>
+            <p>Telefono: 322.836.3854</p>
+        </div></section>
+        <div class="footer-right">
+            <h3>Seguici</h3>
+            <ul>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2024 BookByddy. Tutti i diritti riservati.
+    </div>
+</footer>
 </body>
+
 </html>

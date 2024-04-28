@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/religioso.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
-<h2>Religione</h2>
+<h1>Religione</h1>
 {% for libro in libri_Religioso %}
 <p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
 {% endfor %}
