@@ -1,60 +1,111 @@
-        
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 
     {% block extra_css %}
 {% endblock %}
 </head>
 <body>
-<nav class = "navbar-base">
-    <header>    
-        <h1><a class = "btn btn-color-1  " href="{% url 'home' %}">Book<span>Buddy</span></a></h1>
-    </header>
-<div class="textB">
-    <a class = "btn btn-color-1" href="{% url 'generi' %}">Generi</a>
-    <a class = "btn btn-color-1" href="{% url 'autori' %}">Autori</a>
-    <a class = "btn btn-color-1" href="{% url 'list' %}">Lista</a>
-    {% if user.is_superuser %}
-    <a class = "btn btn-color-1" href="{% url 'newbook' %}">+ NEW BOOK</a>
-    {% endif %}
-</nav>
-</div>
-<div class="container"></div>
-<div>
+    <nav>
+      <div class="logo no-invert">
+          <a class="logo-container" href="{% url 'home' %}"><img src="\static\files\logo.png"  alt="logo" /></a>
+          <a class="logo-container" href="{% url 'home' %}"><h1>BookBuddy</h1></a>
+      </div>
+      <ul>
+        <li>
+          <a href="{% url 'home' %}">Home</a>
+        </li>
+          <li>
+          <a href="{% url 'generi' %}">Generi</a>
+        </li>
+          <li>
+          <a href="{% url 'autori' %}">Autori</a>
+        </li>
+        <li>
+          <a href="{% url 'list' %}">Lista</a>
+        </li>
+        <li>
+          <a href="{% url 'newbook' %}">+ NEW BOOK</a>
+        </li>
+        <li>
+         <form action="{% url 'logout' %}" method="post">
+         {% csrf_token %}
+            <button class="logout-btn" type="submit">Logout</button>
+         </form>
+        </li>
+      </ul>
+
+
+      <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+
+
+    <div class="menubar">
+      <ul>
+        <li>
+          <a href="{% url 'home' %}">Home</a>
+        </li>
+          <li>
+          <a href="{% url 'generi' %}">Generi</a>
+        </li>
+          <li>
+          <a href="{% url 'autori' %}">Autori</a>
+        </li>
+        <li>
+          <a href="{% url 'list' %}">Lista</a>
+        </li>
+        <li>
+          <a href="{% url 'newbook' %}">+ NEW BOOK</a>
+        </li>
+        <li>
+         <form action="{% url 'logout' %}" method="post">
+         {% csrf_token %}
+            <button class="logout-btn" type="submit">Logout</button>
+         </form>
+        </li>
+      </ul>
+    </div>
+    <script src="\static\javascript\script.js"></script>
+
+  <section class="variable-content">
     {% block content %}
 
-{% endblock content %}
-</div>
-<div class="container"></div>
-<footer>
-    <div class="footer-container">
-        <section  id="contact">
-        <div class="footer-left">
-
-            <h3>Contatti</h3>
-<div class="email">
-            <p>Email: <a href="mailto:BookBuddy@gmail.com">BookBuddy@gmail.com</a></p>
-</div>
-            <p>Telefono: 322.836.3854</p>
-        </div></section>
-        <div class="footer-right">
-            <h3>Seguici</h3>
-            <ul>
-                <li><a href="https://www.facebook.com">Facebook</a></li>
-                <li><a href="https://twitter.com/">Twitter</a></li>
-                <li><a href="https://www.instagram.com/">Instagram</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright">
-        &copy; 2024 BookByddy. Tutti i diritti riservati.
-    </div>
-</footer>
-</body>
-
+    {% endblock content %}
+  </section>
+  </body>  
+    <footer>
+          <div class="footer-container">
+              
+              <div class="footer-left">
+                  <h3>Contatti</h3>
+              <div class="email">
+                  <p>Email: <a href="mailto:BookBuddy@gmail.com">BookBuddy@gmail.com</a></p>
+              </div>
+                  <p>Telefono: 322.836.3854</p>
+              </div>
+              
+              <div class="footer-right">
+                  <h3>Seguici</h3>
+                  <ul>
+                      <li><a href="https://www.facebook.com">Facebook</a></li>
+                      <li><a href="https://twitter.com/">Twitter</a></li>
+                      <li><a href="https://www.instagram.com/">Instagram</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="copyright">
+              &copy; 2024 BookByddy. Tutti i diritti riservati.
+          </div>
+    </footer>
+  
 </html>

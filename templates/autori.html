@@ -1,11 +1,10 @@
 {%  extends "base.html" %}
 {% block content %}
-    <h1>Autori</h1>
-    <h3>Autori disponibili nella nostra libreria:</h3>
+    <h2>Autori disponibili nella nostra libreria:</h2>
     <ul>
         {% for autore in autori %}
             <p class="autore">
-                <a href="{% url 'raccolta' autore.pk %}">
+                <a class="link" href="{% url 'raccolta' autore.pk %}">
                     Nome:
                     {{ autore.nome }}
                     | Cogome:

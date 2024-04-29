@@ -6,6 +6,6 @@
 {% block content %}
 <h1>Religione</h1>
 {% for libro in libri_Religioso %}
-<p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
+<div class="libro_title"><a class="link"  href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></div>
 {% endfor %}
 {% endblock content %}

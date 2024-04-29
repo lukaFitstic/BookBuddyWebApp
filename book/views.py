@@ -105,6 +105,7 @@ class LibriperAutoriListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = "raccolta.html"
     context_object_name = 'book'
+
     def get_queryset(self):
         author__id = self.kwargs['author_id']
         return Book.objects.filter(author__id=author__id)

@@ -5,11 +5,11 @@
 {% endblock %}
 {% block content %}
 <h2>Generi</h2>
-<div>
-    <a href="{% url 'giallo' %}">Giallo</a>
-    <a href="{% url 'azione' %}">Azione</a>
-    <a href="{% url 'cucina' %}">Cucina</a>
-    <a href="{% url 'commedia' %}">Commedia</a>
-    <a href="{% url 'religioso' %}">Religioso</a>
+<div class="generi-container">
+    <a class="link" href="{% url 'giallo' %}">Giallo</a>
+    <a class="link" href="{% url 'azione' %}">Azione</a>
+    <a class="link" href="{% url 'cucina' %}">Cucina</a>
+    <a class="link" href="{% url 'commedia' %}">Commedia</a>
+    <a class="link" href="{% url 'religioso' %}">Religioso</a>
 </div>
 {% endblock content %}

@@ -4,8 +4,10 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
-<h1>La tua lista</h1>
+<h2>La tua lista</h2>
 {% for books in list %}
-<p class="libro_title"><a href="{{ books.get_absolute_url }}">{{ books.title }}</a></p>
+<div>
+<a class="toread link" href="{{ books.get_absolute_url }}">{{ books.title }}</a>
+</div>
 {% endfor %}
 {% endblock content %}

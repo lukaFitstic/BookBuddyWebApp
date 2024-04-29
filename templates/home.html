@@ -4,16 +4,12 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
-{{ user.username }}
-     <form action="{% url 'logout' %}" method="post">
-         {% csrf_token %}
-            <button type="submit">Logout</button>
-     </form>
-{% for libro in book_list %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="book-container">
+    {% for libro in book_list %}
     <div class="libri">
-        <p class="libro_title"><a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
-        <p class="body"> {{ libro.body }}</p>
+        <p class="libro_title"><a class="book" href="{{ libro.get_absolute_url }}">{{ libro.title }}</a></p>
     </div>
-{% endfor %}
-
+    {% endfor %}
+</div>
 {% endblock content %}

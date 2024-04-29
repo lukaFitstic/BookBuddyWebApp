@@ -7,13 +7,15 @@
 <h1>{{ object.title }}</h1>
 <p>{{ object.body }}</p>
 <p>Genere: {{ object.genere }}, pagine: {{ object.pages }}, anno: {{ object.year }}</p>
-{% if user.is_superuser %}
 <div>
-    <a href="{% url 'editbook' object.pk %}">Edit Book</a>
-    <a href="{% url 'deletebook' object.pk %}">Delete Book</a>
-</div>
+{% if user.is_superuser %}
+    <a  class="link"  href="{% url 'editbook' object.pk %}">Edit Book</a>
+    <a  class="link"  href="{% url 'deletebook' object.pk %}">Delete Book</a>
 {% endif %}
-    <button id="aggiungi-libro-btn">Aggiungi alla lista di lettura</button>
+    <a class="link"  id="aggiungi-libro-btn">Aggiungi alla lista di lettura</a>
+</div>
+
+   
 <form id="aggiungi-libro-form" action="{% url 'addbook' book.id %}" method="post">{% csrf_token %}</form>
 <script>
     document.getElementById('aggiungi-libro-btn').addEventListener('click', function() {
