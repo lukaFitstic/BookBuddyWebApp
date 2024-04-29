@@ -35,12 +35,14 @@
           <a href="{% url 'newbook' %}">+ NEW BOOK</a>
         </li>
           {% endif %}
+      {% if user.is_authenticated %}
         <li>
          <form action="{% url 'logout' %}" method="post">
          {% csrf_token %}
             <button class="logout-btn" type="submit">Logout</button>
          </form>
         </li>
+      {% endif %}
       </ul>
 
 
@@ -71,12 +73,14 @@
           <a href="{% url 'newbook' %}">+ NEW BOOK</a>
         </li>
           {% endif %}
+      {% if user.is_autheticated %}
         <li>
          <form action="{% url 'logout' %}" method="post">
          {% csrf_token %}
             <button class="logout-btn" type="submit">Logout</button>
          </form>
         </li>
+      {% endif %}
       </ul>
     </div>
     <script src="\static\javascript\script.js"></script>

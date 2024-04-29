@@ -56,17 +56,19 @@
     <div class="menubar">
       <ul>
         <li>
-          <a href="index.html">Home</a>
+          <a href="{% url 'home' %}">Home</a>
         </li>
         <li>
           <a href="#contact">Contact Us</a>
         </li>
+          {% if not user.is_authenticated %}
         <li>
-          <a href="{% url 'signup' %}">register</a>
+          <a href="{% url 'signup' %}">Register</a>
         </li>
           <li>
           <a href="{% url 'login' %}">Login</a>
         </li>
+          {% endif %}
       </ul>
     </div>
 
