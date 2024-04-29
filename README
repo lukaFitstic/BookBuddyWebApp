@@ -1,0 +1,95 @@
+## BookBuddy
+
+Benvenuto nell'app della nostra libreria! Esplora una vasta selezione di libri
+e gestisci la tua lista personale con facilità. Gli utenti possono cercare libri per generi o autori,
+visualizzare dettagli sui libri e aggiungerli alla propria lista personale.
+Gli amministratori possono gestire la libreria con semplicità, aggiungendo,
+modificando ed eliminando libri con un solo clic.
+Scopri di più esplorando la nostra app!
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Installazione:
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/lukaFitstic/BookBuddyWebApp.git
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Apply migrations:
+
+    ```bash
+    python manage.py migrate
+    ```
+
+4. Fill the db, Generate books and author:
+    '''bash
+    python manage.py createauthor quantity
+    '''
+    '''bash
+    python manage.py createbooks quantity
+    '''
+
+5.  Run the development server:
+    ```bash
+    python manage.py runserver
+    ```
+------------------------------------------------------------------------------------------------------------------------
+
+## Utilizzo
+Benvenuto nel nostro progetto! All'inizio, verrai indirizzato alla pagina principale, dove potrai esplorare una breve
+panoramica delle funzionalità dell'app prima di accedere o registrarti.
+Una volta effettuato l'accesso, avrai accesso a una vasta selezione di libri disponibili nella nostra libreria.
+
+Potrai esplorare i libri utilizzando la ricerca per generi o autori,
+permettendoti di trovare facilmente ciò che ti interessa. Cliccando su un libro,
+verrai portato a una pagina dettagliata con tutte le informazioni necessarie,
+tra cui titolo, breve descrizione, genere, pagine e anno di pubblicazione.
+
+Se trovi un libro che ti interessa, avrai la possibilità di aggiungerlo alla tua lista personale,
+permettendoti di tenere traccia dei libri che desideri leggere in futuro.
+
+Queste sono solo alcune delle funzionalità disponibili per gli utenti standard. Se sei un amministratore,
+avrai accesso a funzionalità aggiuntive che semplificano la gestione della libreria.
+Potrai aggiungere, modificare ed eliminare libri con facilità, tutto con un semplice click.
+Questo ti permette di gestire la libreria in modo efficiente, senza la necessità di accedere direttamente al database.
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Implementazioni future
+Come implementazioni future abbiamo pensato:
+1) Recensioni e valutazioni: la possibilità per gli utenti di lasciare recensioni e valutazioni sui libri che hanno letto.
+2) Gestione avanzata delle liste: funzionalità avanzate per la gestione delle liste personali,
+come la creazione di liste tematiche o la possibilità di segnare i libri come "letti", "in corso" o "da leggere".
+3) Requisiti di lettura: Aggiungi la possibilità per gli utenti di impostare obiettivi di lettura personalizzati,
+tenendo traccia dei libri letti e visualizzando statistiche di lettura.
+4) Gamification: Introduce elementi di gamification per incentivare e premiare gli utenti che raggiungono determinati
+obiettivi di lettura o partecipano attivamente alla community dell'app.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Contatti
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Role:
+P.M. Barbieri Luka (backend/sorveglianza frontend)
+Zuffi Simeone (backend)
+Nascetti Gabriele (backend/frontend)
+Abouelhussein Yousef (frontend)
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Contributi particolari
+...
+...
+
+------------------------------------------------------------------------------------------------------------------------
