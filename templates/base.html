@@ -30,9 +30,11 @@
         <li>
           <a href="{% url 'list' %}">Lista</a>
         </li>
+          {% if user.is_superuser %}
         <li>
           <a href="{% url 'newbook' %}">+ NEW BOOK</a>
         </li>
+          {% endif %}
         <li>
          <form action="{% url 'logout' %}" method="post">
          {% csrf_token %}
@@ -64,9 +66,11 @@
         <li>
           <a href="{% url 'list' %}">Lista</a>
         </li>
+          {% if user.is_superuser %}
         <li>
           <a href="{% url 'newbook' %}">+ NEW BOOK</a>
         </li>
+          {% endif %}
         <li>
          <form action="{% url 'logout' %}" method="post">
          {% csrf_token %}
@@ -82,10 +86,10 @@
 
     {% endblock content %}
   </section>
-  </body>  
+  </body>
     <footer>
           <div class="footer-container">
-              
+
               <div class="footer-left">
                   <h3>Contatti</h3>
               <div class="email">
@@ -93,7 +97,7 @@
               </div>
                   <p>Telefono: 322.836.3854</p>
               </div>
-              
+
               <div class="footer-right">
                   <h3>Seguici</h3>
                   <ul>
@@ -107,5 +111,5 @@
               &copy; 2024 BookByddy. Tutti i diritti riservati.
           </div>
     </footer>
-  
+
 </html>
