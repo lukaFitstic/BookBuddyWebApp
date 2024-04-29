@@ -95,3 +95,21 @@ Nascetti Gabriele --> backend e correzione frontend
 ------------------------------------------------------------------------------------------------------------------------
 Bug:
 bottone di logout e newBook spariscono quando viene cliccato lista.
+
+------------------------------------------------------------------------------------------------------------------------
+Implementazione features valutazione superiore:
+● Realizzazione delle view di aggiornamento e cancellazione delle istanze dei model;
+● Configurazione del login e protezione di alcune pagine (accesso consentito solo ad utenti autenticati);
+● Generazione di dati di demo (vedere i comandi dumpdata e loaddata), assicuratevi che funzionino su una installazione
+  pulita;
+● Realizzazione di operazioni asincrone con AJAX (es: chiamate JavaScript a API libere).
+----
+Valutazione super-mega-ultra:
+● Filtri sulle list view.
+  Utilizzate un form per inviare via GET delle opzioni che consentano di filtrare
+  (in qualsiasi modo) i risultati della list view. Riscrivete la “get_queryset” per
+  ottenere solo i risultati corretti
+● Model associato all’utente
+  Create un nuovo model e create una ForeignKey verso l’utente. Alla
+  creazione della nuova istanza del model associate il model all’utente loggato.
+  (si riscrive il metodo “get_form”)
