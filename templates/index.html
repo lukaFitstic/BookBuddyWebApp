@@ -40,23 +40,18 @@
 <div class="logo1">
     <h1>BookBuddy</h1>
 </div>
-    {% if not user.is_authenticated %}
-<section id="box">
-    <div class="btn-container">
-        <button class="btn btn-color-1" onclick="location.href='{% url 'login' %}'">
-          Login
-        </button>
-        <button class="btn btn-color-1" onclick="location.href='{% url 'signup' %}'">
-          Register
-        </button>
-      </div>
-</section>
-    {% endif %}
     <section id ="box">
     <h2>Benvenuti su BookBuddy: Il tuo Gestionale Librario</h2>
-
-BookBuddy Ã¨ la soluzione completa per gestire la tua libreria in modo efficiente e organizzato.<br>
-    Sviluppato con cura per soddisfare le esigenze specifiche dei librai
+      <div class="welcome-wrapper">
+          <p class="welcome-text">
+            Benvenuto nell'app della nostra libreria! Esplora una vasta selezione di libri
+            e gestisci la tua lista personale con facilità. Gli utenti possono cercare libri per generi o autori,br
+            visualizzare dettagli sui libri e aggiungerli alla propria lista personale.
+            Gli amministratori possono gestire la libreria con semplicità, aggiungendo,
+            modificando ed eliminando libri con un solo clic.
+            Scopri di più esplorando la nostra app!
+        </p>
+      </div>    
 </section>
     <div class="menubar">
       <ul>

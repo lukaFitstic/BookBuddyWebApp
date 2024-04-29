@@ -97,8 +97,17 @@ nav .navbar-base{
 
 }
 
+div.welcome-wrapper {
+  width: 85vw;
+  border-style: inset;
+}
+
+p.welcome-text{
+  text-align: justify;
+}
+
 .logo1{
-  margin-top: 9rem;
+  margin-top: 40px;
 text-align: center;
   font-size: 2rem;
 }
@@ -384,6 +393,10 @@ footer {
     padding: 10px 15px;
     border-radius: 3px;
     transition: 0.3s;
+  }
+
+  a.link {
+    font-weight: 550;
   }
 
   div a.toread {
