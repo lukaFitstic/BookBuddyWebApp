@@ -21,12 +21,14 @@
           <li>
           <a href="#contact">Contact Us</a>
         </li>
+          {% if not user.is_authenticated %}
               <li>
               <a href="{% url 'signup' %}">Register</a>
             </li>
             <li>
               <a href="{% url 'login' %}">Login</a>
             </li>
+          {% endif %}
       </ul>
 
 
