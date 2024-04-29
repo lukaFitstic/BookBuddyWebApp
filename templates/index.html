@@ -16,18 +16,17 @@
       </div>
       <ul>
         <li>
-          <a href="">Home</a>
+          <a href="{% url 'home' %}">Home</a>
         </li>
           <li>
           <a href="#contact">Contact Us</a>
         </li>
-          <li>
-          <a href="{% url 'signup' %}">Register</a>
-        </li>
-        <li>
-          <a href="{% url 'login' %}">Login</a>
-        </li>
-
+              <li>
+              <a href="{% url 'signup' %}">Register</a>
+            </li>
+            <li>
+              <a href="{% url 'login' %}">Login</a>
+            </li>
       </ul>
 
 
@@ -41,9 +40,9 @@
 <div class="logo1">
     <h1>BookBuddy</h1>
 </div>
+    {% if not user.is_authenticated %}
 <section id="box">
     <div class="btn-container">
-
         <button class="btn btn-color-1" onclick="location.href='{% url 'login' %}'">
           Login
         </button>
@@ -52,6 +51,7 @@
         </button>
       </div>
 </section>
+    {% endif %}
     <section id ="box">
     <h2>Benvenuti su BookBuddy: Il tuo Gestionale Librario</h2>
 
