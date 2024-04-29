@@ -30,10 +30,10 @@ body {
 
 #box {
   display:flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: 30vh;
+  min-height: 75vh;
   text-align: center;
 }
 .btn {
@@ -203,7 +203,9 @@ nav ul li a:hover {
   z-index: 2;
 }
 .active {
+  position: fixed;
   left: 0;
+  padding-top: 100px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -263,6 +265,7 @@ footer {
 }
 
 
+
 .footer-container {
 
   display: flex;
@@ -275,80 +278,80 @@ footer {
     flex-basis: 20%;
 }
 
-  .footer-left h3, .footer-right h3 {
-    margin-bottom: 10px;
-  }
+.footer-left h3, .footer-right h3 {
+  margin-bottom: 10px;
+}
 
-  .footer-right ul {
-    list-style: none;
-    padding: 0;
-  }
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
 
-  .footer-right ul li {
-    display: inline;
-    margin-right: 10px;
-  }
+.footer-right ul li {
+  display: inline;
+  margin-right: 10px;
+}
 
-  .footer-right ul li:last-child {
-    margin-right: 0;
-  }
+.footer-right ul li:last-child {
+  margin-right: 0;
+}
 
-  .footer-right ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
+.footer-right ul li a {
+  color: #fff;
+  text-decoration: none;
+}
 
-  .copyright {
-    margin-top: 20px;
-  }
+.copyright {
+  margin-top: 20px;
+}
 
-  .email a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
+.email a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
 
-  .email a:hover {
-    color: lightblue;
-    background-color: transparent;
-    text-decoration: none;
-  }
+.email a:hover {
+  color: lightblue;
+  background-color: transparent;
+  text-decoration: none;
+}
 
-  .textB {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
+.textB {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 
-  }
+}
 
-  div.libreria {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 20px;
-  }
+div.libreria {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+}
 
-  div .wrapper {
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
+div .wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
 
 
+.libri {
+  width: 200px;
+  margin: 20px;
+  padding: 3px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+@media screen and (max-width: 790px){
   .libri {
-    width: 200px;
-    margin: 20px;
-    padding: 3px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    text-align: center;
-    background-color: #f0f0f0;
-    overflow: hidden;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-  }
-
-    @media screen and (max-width: 700px){
-      .libri {
     width: 80vw;
     margin: 20px;
     padding: 3px;
@@ -360,162 +363,194 @@ footer {
     justify-content: left;
     align-items: center;
   }
-  }
+}
 
-  .libro_title {
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.libro_title {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .descrizione {
-    font-size: 0.9em;
-    color: #333;
-  }
+.descrizione {
+  font-size: 0.9em;
+  color: #333;
+}
 
-  p.body {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #666;
-  }
+p.body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
 
-  div {
-    background-color: transparent; /* Navbar background color */
-    padding: 10px; /* Padding around navbar */
-    border-radius: 5px; /* Rounded corners */
-    list-style-type: none; /* Remove default bullet points */
-  }
+div {
+  background-color: transparent; /* Navbar background color */
+  padding: 10px; /* Padding around navbar */
+  border-radius: 5px; /* Rounded corners */
+  list-style-type: none; /* Remove default bullet points */
+}
 
-  div a {
-    text-decoration: none;
-    color: #070000;
-    padding: 10px 15px;
-    border-radius: 3px;
-    transition: 0.3s;
+@media screen and (max-width: 790px) {
+  div.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
+}
 
-  a.link {
-    font-weight: 550;
-  }
+div a {
+  text-decoration: none;
+  color: #070000;
+  padding: 10px 15px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
 
-  div a.toread {
-    text-decoration: none;
-    color: #070000;
-    padding: 8px 15px;
-    border-radius: 3px;
-    transition: 0.3s;
-  }
+a.link {
+  font-weight: 550;
+}
 
-  ul li.autore {
-    list-style: none;
-    padding: 8px;
+div a.toread {
+  text-decoration: none;
+  color: #070000;
+  padding: 8px 15px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+ul li.autore {
+  list-style: none;
+  padding: 8px;
+}
+
+ul li a{
+  text-decoration: none;
+  color: #070000;
+  padding: 8px 15px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 790px) {
+  ul {
+    padding: 10px;
   }
 
   ul li a{
     text-decoration: none;
     color: #070000;
-    padding: 8px 15px;
+    padding: unset;
     border-radius: 3px;
     transition: 0.3s;
   }
+}
 
-  ul p a:hover {
-    background-color: #6500ff;
-    color: #ffffff;
-    cursor: pointer;
-  }
+ul p a:hover {
+  background-color: #6500ff;
+  color: #ffffff;
+  cursor: pointer;
+}
 
-  a.link:hover {
-    background-color: #6500ff;
-    color: #ffffff;
-    cursor: pointer;
-  }
+a.link:hover {
+  background-color: #6500ff;
+  color: #ffffff;
+  cursor: pointer;
+}
 
-    div p a.book:hover {
-    color: #6500ff;
-    cursor: pointer;
-  }
+  div p a.book:hover {
+  color: #6500ff;
+  cursor: pointer;
+}
 
-  .login {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+.login {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .login form {
+.login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.login .button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #6500ff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.signup {
+  text-align: center;
+  margin-top: 10px;
+}
+
+form.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #6500ff;
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  margin-bottom: 60px;
+}
+
+h1 {
+  text-align: center;
+  color: #6500ff;
+}
+
+form input[type="submit"] {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #6500ff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+p {
+  margin: 10px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  margin: 5px;
+
+}
+
+.book-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.generi-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 790px) {
+  .generi-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
+}
 
-  .login input {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 80%;
-  }
-
-  .login .button {
-    margin: 10px 0;
-    padding: 10px 20px;
-    background-color: #6500ff;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-
-  .signup {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  form.login-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #6500ff;
-    border-radius: 25px;
-    background-color: #f9f9f9;
-    margin-bottom: 60px;
-  }
-
-  h1 {
-    text-align: center;
-    color: #6500ff;
-  }
-
-  form input[type="submit"] {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #6500ff;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-  }
-
-  p {
-    margin: 10px;
-  }
-
-  form input[type="text"],
-  form input[type="password"] {
-    width: 100%;
-    margin: 5px;
-
-  }
-
-  .book-container {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .generi-container {
-    min-height: 100vh;
-  }

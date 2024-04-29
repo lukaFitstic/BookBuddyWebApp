@@ -30,19 +30,19 @@
         <li>
           <a href="{% url 'list' %}">Lista</a>
         </li>
-          {% if user.is_superuser %}
+        {% if user.is_superuser %}
         <li>
           <a href="{% url 'newbook' %}">+ NEW BOOK</a>
         </li>
-          {% endif %}
-      {% if user.is_authenticated %}
-        <li>
-         <form action="{% url 'logout' %}" method="post">
-         {% csrf_token %}
-            <button class="logout-btn" type="submit">Logout</button>
-         </form>
-        </li>
-      {% endif %}
+        {% endif %}
+        {% if user.is_authenticated %}
+          <li>
+           <form action="{% url 'logout' %}" method="post">
+           {% csrf_token %}
+              <button class="logout-btn" type="submit">Logout</button>
+           </form>
+          </li>
+        {% endif %}
       </ul>
 
 

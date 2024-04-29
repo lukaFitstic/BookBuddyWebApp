@@ -5,12 +5,15 @@
         {% if forloop.first %}
         <h3> {{ libri.author }} ha scritto</h3>
         {% endif %}
-        <div>
+        <ul>
+        <li>
             <a class="link"  href="{{ libri.get_absolute_url }}">
-        Genere: {{ libri.genere }} |
-        Title: {{ libri.title }} |
-        Pages: {{ libri.pages }}
+                Title: {{ libri.title }} |
+                Genere: {{ libri.genere }} |
+                Pages: {{ libri.pages }}
             </a>
-        </div>
+        </li>
+        
+        </ul>
     {% endfor %}
 {% endblock content %}
