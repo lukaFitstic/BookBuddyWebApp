@@ -14,8 +14,3 @@ mobileNav.addEventListener("click", () => toggleNav());
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
-
-function toggleDarkMode() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-}

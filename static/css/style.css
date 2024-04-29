@@ -57,7 +57,7 @@ h2 {
 }
 
 .variable-content {
-  padding-top:100px; /* Altezza della navbar */
+  padding-top:100px;
   min-height: 100vh;
   margin-bottom: 30px;
 }
@@ -384,10 +384,10 @@ p.body {
 }
 
 div {
-  background-color: transparent; /* Navbar background color */
-  padding: 10px; /* Padding around navbar */
-  border-radius: 5px; /* Rounded corners */
-  list-style-type: none; /* Remove default bullet points */
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  list-style-type: none;
 }
 
 @media screen and (max-width: 790px) {
