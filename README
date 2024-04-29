@@ -76,20 +76,22 @@ obiettivi di lettura o partecipano attivamente alla community dell'app.
 ------------------------------------------------------------------------------------------------------------------------
 
 ## Contatti
-
+mail d'istituto
 
 ------------------------------------------------------------------------------------------------------------------------
 
 ## Role:
-P.M. Barbieri Luka (backend/sorveglianza frontend)
+P.M. Barbieri Luka (backend/sorveglianza generale)
 Zuffi Simeone (backend)
-Nascetti Gabriele (backend/frontend)
+Nascetti Gabriele (backend)
 Abouelhussein Yousef (frontend)
 
 ------------------------------------------------------------------------------------------------------------------------
 
 ## Contributi particolari
-...
-...
+Barbieri Luka --> suddivisione dei compiti e backend
+Nascetti Gabriele --> backend e correzione frontend
 
 ------------------------------------------------------------------------------------------------------------------------
+Bug:
+bottone di logout e newBook spariscono quando viene cliccato lista.
