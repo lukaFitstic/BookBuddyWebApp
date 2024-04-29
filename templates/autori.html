@@ -3,7 +3,7 @@
     <h2>Autori disponibili nella nostra libreria:</h2>
     <ul>
         {% for autore in autori %}
-            <p class="autore">
+            <li class="autore">
                 <a class="link" href="{% url 'raccolta' autore.pk %}">
                     Nome:
                     {{ autore.nome }}
@@ -12,7 +12,7 @@
                     | Età:
                     {{ autore.eta }}
                 </a>
-            </p>
+            </li>
         {% endfor %}
     </ul>
 {% endblock content %}

@@ -394,7 +394,12 @@ footer {
     transition: 0.3s;
   }
 
-  ul p a{
+  ul li.autore {
+    list-style: none;
+    padding: 8px;
+  }
+
+  ul li a{
     text-decoration: none;
     color: #070000;
     padding: 8px 15px;
